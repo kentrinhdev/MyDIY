@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Register iDiM</title>
-  <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css" />
-  <link rel="stylesheet" type="text/css" href="/public/stylesheets/register.css" />
-  <script type="text/javascript" src="/public/javascripts/menu-animation.js"></script>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/register.css" />
+  <script type="text/javascript" src="../javascripts/menu-animation.js"></script>
 </head>
 <body>
 
@@ -24,39 +24,36 @@
         <h1 class="hero-h1 h1-register">What is iDiM ?</h1>
         <h2 class="hero-txt-span">iDiM means i Do it Myself.</h2>
         <br>
-        <!--
-        Here at iDiM
-        <br>
-        search for fun projects, save it, and even upload your own iDiM projects.
-        <br>
-        Join the iDiM movement now!
-        <br>
-        -->
-
-        <form class="form-register">
+        <form class="form-register" id="form-register">
           <label class="frm-register-lbl">FN</label>
-          <input class="frm-register-input" type="text" name="firstname" placeholder=" FIRST NAME">
+          <input class="frm-register-input" type="text" name="firstname" placeholder=" FIRST NAME" required="required" aria-required="true">
           <br>
           <label class="frm-register-lbl">LN</label>
-          <input class="frm-register-input" type="text" name="lastname" placeholder=" LAST NAME">
+          <input class="frm-register-input" type="text" name="lastname" placeholder=" LAST NAME" required="required" aria-required="true">
           <br>
           <label class="frm-register-lbl">UN</label>
-          <input class="frm-register-input" type="text" name="username" placeholder="USERNAME">
+          <input class="frm-register-input" type="text" name="username" placeholder="USERNAME" required="required" aria-required="true">
           <br>
           <label class="frm-register-lbl">PW</label>
-          <input class="frm-register-input" type="password" name="password" placeholder="PASSWORD">
+          <input class="frm-register-input" id="frm-password" type="password" name="password" placeholder="PASSWORD" minlength="8" maxlength="8" required="required" aria-required="true">
           <br>
           <label class="frm-register-lbl">PW</label>
-          <input class="frm-register-input" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD">
+          <input class="frm-register-input" id="frm-password-confirm" type="password" name="confirmpassword" placeholder="CONFIRM PASSWORD" minlength="8" maxlength="8" required="required" aria-required="true">
+          <p class="frm-pw-message" id='frm-pwconfirm-message' hidden></p>
           <br>
           <label class="frm-register-lbl">EA</label>
-          <input class="frm-register-input" type="email" name="email" placeholder=" EMAIL ADDRESS">
-          <br>
-          <a href="html/register.html"><button class="btn btn-register">REGISTER</button></a>
+          <input class="frm-register-input" id="frm-email" type="email" name="email" placeholder=" EMAIL ADDRESS" required="required" aria-required="true">
+          <div>
+            <input type="submit" class="btn btn-register" id="btn-register" value="REGISTER" onClick='handleRegisterFormSubmit()' />
+          </div>  
         </form>
       </div>
     </div>
 
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../javascripts/store.js"></script>
+  <script type="text/javascript" src="../javascripts/app.js"></script>
 </body>
 </html>
