@@ -1,3 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: goldenrod;
+  text-decoration: none;
+}
+
 .hero-img-box {
   background-image: linear-gradient(rgba(255,20,147, 0.5), rgba(0, 0, 0, 0.8)), url("../images/hero-bg-3.jpg");
   height: 100%;
@@ -14,6 +23,7 @@
 
 .h1-register {
   font-size: 1.5rem;
+  margin-top: -25px;
 }
 
 .hero-txt-span {
@@ -94,4 +104,33 @@ input[type=button]:focus {
   color: white;
   background: #FF1493;
   border: 1px solid #FF1493;
+}
+
+.textbox-search {
+  width: 100%;
+  text-align: center;
+  padding-left: 0px !important;
+}
+
+.link-more {
+  text-decoration: none;
+}
+
+.link-more:hover {
+  color: #FF1493;
+  cursor: pointer;
+}
+
+.img-more {
+  width: 40px;
+  height: 25px;
+}
+
+.btn-upload-project {
+  text-align: center;
+}
+
+.img-line {
+  width: 90%;
+  height: 2px;
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profile | iDiM collections</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/menu-mobile.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/register.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/home.css" />
+</head>
+<body>
+  <a name="top-home"></a>
+  <div class="hero-img-box">
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <!-- NAVIGATION MOBILE MENU -->
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="/" onclick='closeNav()'>home</a>
+        <a href="/home#saved-projects" onclick='closeNav()'>saved</a>
+        <a href="/home#upload-projects" onclick='closeNav()'>upload</a>
+        <a href="#" onclick='checkSessionProfile();closeNav()'>profile</a>
+        <a href="#" id="btn-logout" onClick='handleLogoutButton()'>logout</a>
+      </div>
+    </div>
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <span onclick="openNav()">
+      <div class="container">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </span>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <!-- NAVIGATION MOBILE MENU -->
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+
+    <div class="hero-txt-box">
+      <div class="hero-p-txt-box hero-p-txt-box-register">
+        <h1 class="hero-h1 h1-register">WELCOME BACK !</h1>
+        <h2 class="hero-txt-span">iDiM means i Do it Myself.</h2>
+        <br>
+        <form class="form-register" id="form-register">
+          <input class="frm-register-input textbox-search" type="text" name="firstname" placeholder="ENTER PROJECT KEYWORDS" required="required" aria-required="true">
+          <div>
+            <input class="btn btn-register" id="btn-register" type="submit" value="SEARCH" />
+          </div>
+          <!-- <div>
+            <input type="submit" class="btn btn-register" id="btn-register" value="UPLOAD" />
+          </div>   -->
+        </form>
+        <!-- <input type="submit" class="btn btn-register" id="btn-logout" value="LOG OUT" onClick='handleLogoutButton()' /> -->
+      </div>
+
+      <a class="link-more" href="#saved-projects">
+        <h3 class="hero-txt-span">MORE</h3>
+        <div id="div-img-more">
+          <img class="img-more" src="../images/more.png" />
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <a name="saved-projects"></a>
+  <div class="hero-img-box">
+    <div class="hero-txt-box">
+      <div class="hero-p-txt-box hero-p-txt-box-register">
+        <div>
+          <img class="img-line" src="../images/line.png" />
+        </div>
+        <br>
+        <div>
+          <h3 class="hero-txt-span title-saved-projects">My Saved Projects</h3>
+          <div>
+            <img class="img-line" src="../images/line.png" />
+          </div>
+          <ul class="projects-list">
+            <li>Pop Tabs Bag</li>
+            <li>Windshild Rainbow</li>
+            <li>Spoon Lamp</li>
+            <li>Missioni Shoes</li>
+            <li>Turn Glove Into A Chipmunk</li>
+            <li>Dried Pineapple Flowers</li>
+            <li>Rosy Stationery Made With Celery</li>
+          </ul>
+        </div>
+      </div>
+
+      <a class="link-more" href="#upload-projects">
+        <h3 class="hero-txt-span">MORE</h3>
+        <div id="div-img-more-upload">
+          <img class="img-more" src="../images/more.png" />
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <a name="upload-projects"></a>
+  <div class="hero-img-box">
+    <div class="hero-txt-box">
+      <div class="hero-p-txt-box hero-p-txt-box-register">
+        <div class="img-line-top-box">
+          <img class="img-line" src="../images/line.png" />
+        </div>
+        <br>
+        <div>
+          <h5 class="hero-txt-span">Upload a New Project</h5>
+          <div>
+            <img class="img-line" src="../images/line.png" />
+          </div>
+          <form class="form-register form-upload" id="form-upload">
+            <input class="frm-register-input textbox-search" type="text" placeholder="ENTER PROJECT TITLE" required="required" aria-required="true">
+            <br>
+            <textarea class="frm-register-input textbox-search frm-upload-textarea" id="frm-upload-textarea" form="form-upload" placeholder="ENTER PROJECT STEPS ..."></textarea>
+            <div class="btn-upload-box">
+              <input class="btn btn-register btn-upload" id="btn-upload" type="submit" value="UPLOAD" />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <a class="link-more" href="#top-home">
+        <div id="div-img-top">
+          <img class="img-more" src="../images/top.png" />
+        </div>
+        <h3 class="hero-txt-span">TOP</h3>
+      </a>
+    </div>
+  </div>
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../javascripts/menu-animation.js"></script>
+  <script type="text/javascript" src="../javascripts/store.js"></script>
+  <script type="text/javascript" src="../javascripts/profile.js"></script>
+  <script type="text/javascript" src="../javascripts/home.js"></script>
+</body>
+</html>

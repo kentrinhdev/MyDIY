@@ -6,33 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Register iDiM</title>
   <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/menu-mobile.css" />
   <link rel="stylesheet" type="text/css" href="../stylesheets/register.css" />
-  <script type="text/javascript" src="../javascripts/menu-animation.js"></script>
 </head>
 <body>
 
   <div class="hero-img-box">
-
-    <div class="container" onclick="myFunction(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-
+    
     <div class="hero-txt-box">
       <div class="hero-p-txt-box hero-p-txt-box-register">
-        <h1 class="hero-h1 h1-register">What is iDiM ?</h1>
+        <h1 class="hero-h1 h1-register">Join iDiM</h1>
         <h2 class="hero-txt-span">iDiM means i Do it Myself.</h2>
         <br>
         <form class="form-register" id="form-register">
           <label class="frm-register-lbl">FN</label>
-          <input class="frm-register-input" type="text" name="firstname" placeholder=" FIRST NAME" required="required" aria-required="true">
+          <input class="frm-register-input" id="register-firstname" type="text" name="firstname" placeholder=" FIRST NAME" required="required" aria-required="true" autofocus />
           <br>
           <label class="frm-register-lbl">LN</label>
-          <input class="frm-register-input" type="text" name="lastname" placeholder=" LAST NAME" required="required" aria-required="true">
+          <input class="frm-register-input" id="register-lastname" type="text" name="lastname" placeholder=" LAST NAME" required="required" aria-required="true">
           <br>
           <label class="frm-register-lbl">UN</label>
-          <input class="frm-register-input" type="text" name="username" placeholder="USERNAME" required="required" aria-required="true">
+          <input class="frm-register-input" id="register-username" type="text" name="username" placeholder="USERNAME" required="required" aria-required="true">
           <br>
           <label class="frm-register-lbl">PW</label>
           <input class="frm-register-input" id="frm-password" type="password" name="password" placeholder="PASSWORD" minlength="8" maxlength="8" required="required" aria-required="true">
@@ -53,6 +47,7 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../javascripts/menu-animation.js"></script>
   <script type="text/javascript" src="../javascripts/store.js"></script>
   <script type="text/javascript" src="../javascripts/app.js"></script>
 </body>
