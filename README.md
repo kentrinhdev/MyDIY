@@ -1,3 +1,3 @@
-iDiM
+iDiM Collections
 i Do It Myself
 
