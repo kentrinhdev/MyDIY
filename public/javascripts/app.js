@@ -1,33 +1,17 @@
 "use strict";
 
-//===============================================
-// HOME PAGE HERO MESSAGE
-//===============================================
-setInterval(
-  function slideText() {
-    let max = heroH1.length;
-    let i = Math.floor((Math.random() * max) + 0);
-    $('#hero-h1').html(`${heroH1[i]}`);
-  }, 2000
-);
+function checkSession() {
+  let user = localStorage.getItem('user');
+  if (user) {
+    location.href = "/home";
+  }
+}
 
-setInterval(
-  function slideText() {
-    let max = heroDiv.length;
-    let i = Math.floor((Math.random() * max) + 0);
-    $('#hero-div').html(`${heroDiv[i]}`);
-  }, 3000
-);
-
-//===============================================
-// REGISTER PAGE REGISTER BUTTON
-//===============================================
 function validatePassword() {
   $('#frm-password-confirm').on('focusout', function() {
     pw = $('#frm-password').val();
     pwconfirm = $('#frm-password-confirm').val();
     if (pw == pwconfirm) {
-      //$('#frm-pwconfirm-message').toggle().html('Password entered matches').css('color', 'white');
       $('#frm-pwconfirm-message').hide();
       $('#frm-email').select();
       pwvalidate = true;
@@ -46,10 +30,33 @@ function handleRegisterFormSubmit() {
     var pass = validatePassword();
     console.log('pass: ', pass);
 
+    let firstName = $('#register-firstname').val();
+    let lastName = $('#register-lastname').val();
+    let username = $('#register-username').val();
+    let password = $('#frm-password').val();
+    let email = $('#frm-email').val();
+
     if (pass) {
       console.log('pw', pw);
       console.log('pw-confirm', pwconfirm);
-      location.href = "/email-confirmation";
+
+      $.ajax({
+          type: 'POST',
+          url: '/users',
+          data: {
+            firstName: firstName,
+            lastName: lastName,
+            username: username,
+            password: password,
+            email: email
+          },
+          success: function(data) {
+            console.log(data);
+            localStorage.setItem('user', JSON.stringify(data));
+            location.href = "/profile";
+          },
+          dataType: "json"
+        });
     } else {
       $('#frm-pwconfirm-message').toggle().html('Password entered does not match').css('color', 'red');
       $('#frm-password').select();
@@ -59,8 +66,41 @@ function handleRegisterFormSubmit() {
   });
 }
 
+function handleLoginFormSubmit() {
+  $('#form-login').submit(function(event) {
+    event.preventDefault();
+
+    $.ajax({
+      type: 'POST',
+      url: '/users/login',
+      data: {
+        username: $('#login-username').val(),
+        password: $('#login-password').val(),
+      },
+      success: function(data) {
+        console.log(data);
+        localStorage.setItem('user', JSON.stringify(data));
+        location.href = "/profile";
+      },
+      error: function(data) {
+        console.log(data);
+        $('#wrong-password-message').toggle().html(`Password entered is incorrect!<br>Please try again.`).css('color', 'red');
+        $('#login-username').select();
+        console.log("Username and/or Password is incorrect");
+      },
+      dataType: "json"
+    });
+  });
+}
+
+function handleLoginPageLoad() {
+  $('#login-username').focus();
+}
+
 function startApp() {
+  checkSession();
   validatePassword();
+  handleLoginPageLoad();
 }
 
 $(startApp);

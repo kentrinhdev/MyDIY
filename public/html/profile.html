@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Join iDiM</title>
-  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
-  <link rel="stylesheet" type="text/css" href="../stylesheets/register-login.css" />
+  <title>Profile | iDiM collections</title>
   <link rel="stylesheet" type="text/css" href="../stylesheets/menu-mobile.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/login.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/register.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/profile.css" />
 </head>
 <body>
 
@@ -22,9 +24,9 @@
       <!-- Overlay content -->
       <div class="overlay-content">
         <a href="/" onclick='closeNav()'>home</a>
-        <a href="#" onclick='checkSessionHomeSaved();closeNav()'>saved</a>
-        <a href="#" onclick='checkSessionHomeUpload();closeNav()'>upload</a>
-        <a href="#" onclick='checkSessionProfile();closeNav()'>profile</a>
+        <a href="/home#saved-projects" onclick='closeNav()'>saved</a>
+        <a href="/home#upload-projects" onclick='closeNav()'>upload</a>
+        <a href="/profile" onclick='closeNav()'>profile</a>
         <a href="#" id="btn-logout" onClick='handleLogoutButton()'>logout</a>
       </div>
     </div>
@@ -42,31 +44,29 @@
 
     <div class="hero-txt-box">
       <div class="hero-p-txt-box hero-p-txt-box-register">
-        <div class="ico-box ico-box-join">
-          <img class="ico-img" src="../images/pen.png" />
+        <div class="ico-box">
+          <img class="ico-img" src="../images/user.png" />
         </div>
-        Not part of iDiM ?
         <br>
-        <a href="/register"><button class="btn btn-register-join">JOIN</button></a>
-      </div>
-
-      <div class="hero-p-txt-box hero-p-txt-box-login">
-        <div class="ico-box ico-box-login">
-          <img class="ico-img" src="../images/key.png" />
+        <h1 class="hero-h1 h1-register">MY PROFILE</h1>
+        <div>
+          <img class="img-line" src="../images/line.png" />
         </div>
-        Already part of iDiM ?
-        <br>
-        <a href="/login"><button class="btn btn-register-login">LOGIN</button></a>
+        <div class="profile-info">
+            <p>FN: <span id="first-name"></span></p>
+            <p>LN: <span id="last-name"></p>
+            <p>UN: <span id="user-name"></p>
+            <p>EA: <span id="email-address"></p>
+        </div>
       </div>
     </div>
 
   </div>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/menu-animation.js"></script>
-  <script type="text/javascript" src="javascripts/store.js"></script>
-  <script type="text/javascript" src="javascripts/profile.js"></script>
-  <script type="text/javascript" src="javascripts/home.js"></script>
-  <script type="text/javascript" src="javascripts/app.js"></script>
+  <script type="text/javascript" src="../javascripts/menu-animation.js"></script>
+  <script type="text/javascript" src="../javascripts/store.js"></script>
+  <script type="text/javascript" src="../javascripts/home.js"></script>
+  <script type="text/javascript" src="../javascripts/profile.js"></script>
 </body>
 </html>

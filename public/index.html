@@ -5,17 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>iDiM | i Do it Myself collections</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/menu-mobile.css" />
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-  <script type="text/javascript" src="javascripts/menu-animation.js"></script>
 </head>
 <body>
 
   <div class="hero-img-box">
-    <div class="container" onclick="myFunction(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <!-- NAVIGATION MOBILE MENU -->
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="/" onclick='closeNav()'>home</a>
+        <a href="#" onclick='checkSessionHomeSaved();closeNav()'>saved</a>
+        <a href="#" onclick='checkSessionHomeUpload();closeNav()'>upload</a>
+        <a href="#" onclick='checkSessionProfile();closeNav()'>profile</a>
+        <a href="#" id="btn-logout" onClick='handleLogoutButton()'>logout</a>
+      </div>
     </div>
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <span onclick="openNav()">
+      <div class="container">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </span>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <!-- NAVIGATION MOBILE MENU -->
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
     <div class="hero-txt-box">
       <h1 class="hero-h1" id="hero-h1"></h1>
@@ -34,7 +56,11 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/menu-animation.js"></script>
+  <script type="text/javascript" src="javascripts/index.js"></script>
   <script type="text/javascript" src="javascripts/store.js"></script>
+  <script type="text/javascript" src="javascripts/profile.js"></script>
+  <script type="text/javascript" src="javascripts/home.js"></script>
   <script type="text/javascript" src="javascripts/app.js"></script>
 </body>
 </html>

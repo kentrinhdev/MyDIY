@@ -4,35 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Register iDiM</title>
+  <title>Login iDiM</title>
   <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/menu-mobile.css" />
+  <link rel="stylesheet" type="text/css" href="../stylesheets/register.css" />
   <link rel="stylesheet" type="text/css" href="../stylesheets/login.css" />
-  <script type="text/javascript" src="../javascripts/menu-animation.js"></script>
 </head>
 <body>
 
   <div class="hero-img-box">
-
-    <div class="container" onclick="myFunction(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <!-- NAVIGATION MOBILE MENU -->
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="/" onclick='closeNav()'>home</a>
+        <a href="#" onclick='checkSessionHomeSaved();closeNav()'>saved</a>
+        <a href="#" onclick='checkSessionHomeUpload();closeNav()'>upload</a>
+        <a href="#" onclick='checkSessionProfile();closeNav()'>profile</a>
+        <a href="#" id="btn-logout" onClick='handleLogoutButton()'>logout</a>
+      </div>
     </div>
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <span onclick="openNav()">
+      <div class="container">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </span>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <!-- NAVIGATION MOBILE MENU -->
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
     <div class="hero-txt-box">
-      <div class="hero-p-txt-box hero-p-txt-box-register">
+      <div class="hero-p-txt-box hero-p-txt-box-login">
         <div class="ico-box">
           <img class="ico-img" src="../images/key.png" />
         </div>
 
-        <form class="form-register">
-          <label class="frm-register-lbl">UN</label>
-          <input class="frm-register-input" type="text" name="username" placeholder="USERNAME">
+        <form class="form-login" id="form-login">
+          <label class="frm-login-lbl">UN</label>
+          <input class="frm-login-input" id="login-username" type="text" name="username" tabindex="1" placeholder="USERNAME">
           <br>
-          <label class="frm-register-lbl">PW</label>
-          <input class="frm-register-input" type="password" name="password" placeholder="PASSWORD">
-          <br>
-          <input type="button" class="btn btn-register" value="SIGN IN" />
+          <label class="frm-login-lbl">PW</label>
+          <input class="frm-login-input" id="login-password" type="password" name="password" tabindex="2" placeholder="PASSWORD">
+          <p class="frm-pw-message" id='wrong-password-message' tabindex="0" hidden></p>
+          <div>
+            <input type="submit" class="btn btn-login" id="btn-login" value="SIGN IN" tabindex="3" onClick='handleLoginFormSubmit()' />
+          </div>
         </form>
       </div>
     </div>
@@ -40,7 +64,10 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="../javascripts/store.js"></script>
-  <script type="text/javascript" src="../javascripts/app.js"></script>
+  <script type="text/javascript" src="javascripts/menu-animation.js"></script>
+  <script type="text/javascript" src="javascripts/store.js"></script>
+  <script type="text/javascript" src="javascripts/profile.js"></script>
+  <script type="text/javascript" src="javascripts/home.js"></script>
+  <script type="text/javascript" src="javascripts/app.js"></script>
 </body>
 </html>

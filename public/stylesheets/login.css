@@ -22,7 +22,7 @@
   position: relative;
 }
 
-.hero-p-txt-box-register {
+.hero-p-txt-box-login {
   font-size: 1rem;
   margin-top: 55px;
 }
@@ -36,18 +36,18 @@
   margin-bottom: 5px;
 }
 
-.form-register {
+.form-login {
   font-size: 1rem;
   text-align: left;
 }
 
-.frm-register-lbl {
+.frm-login-lbl {
   font-family: 'Baloo Thambi', cursive;
   padding-left: 7px;
   margin-right: 10px;
 }
 
-.frm-register-input {
+.frm-login-input {
   width: 85%;
   font-size: 1rem;
   color: white;
@@ -74,11 +74,11 @@
   color: lightblue;
 }
 
-.frm-register-input:hover {
+.frm-login-input:hover {
   background-color: #FF1493;
 }
 
-.btn-register {
+.btn-login {
   width: 300px;
   font-size: 1rem;
   letter-spacing: 10px;
@@ -88,7 +88,13 @@
   border: 1px solid white;
 }
 
-.btn-register:hover {
+.btn-login:hover {
+  border: 1px solid #FF1493;
+}
+
+.btn-login:focus {
+  color: white;
+  background: #FF1493;
   border: 1px solid #FF1493;
 }
 

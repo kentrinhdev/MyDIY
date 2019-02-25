@@ -1,0 +1,33 @@
+.img-line-top-box {
+  margin-top: -65px;
+}
+
+.title-saved-projects {
+  width: 90vw;
+}
+
+.projects-list {
+  list-style: none;
+  line-height: 1.5rem;
+}
+
+.projects-list li:hover {
+  font-size: 1.1rem;
+  color: #FF1493;
+  cursor: pointer;
+}
+
+.frm-upload-textarea {
+  height: 35vh;
+  /* max-width: 100%; */
+  text-align: left;
+  padding-top: 15px !important;
+  padding-left: 25px !important;
+  padding-bottom: 15px !important;
+  padding-right: 25px !important;
+  /* overflow-x: hidden; */
+}
+
+.btn-upload-box {
+  text-align: center;
+}
