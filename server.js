@@ -49,24 +49,24 @@ app.use(function (req, res, next) {
   next();
 });
 
-function runServer(databaseUrl, port=PORT) {
-  return new Promise((resolve, reject) => {
-    mongoose.connect(databaseUrl, err => {
-      if (err) {
-        return reject(err);
-      }
-      let server;
-      server = app.listen(port, () => {
-        console.log(`Your app is listening on port ${port}`);
-        resolve();
-      })
-      .on('error', err => {
-        mongoose.disconnect();
-        reject(err);
-      });
-    });
-  });
-}
+// function runServer(databaseUrl, port=PORT) {
+//   return new Promise((resolve, reject) => {
+//     mongoose.connect(databaseUrl, err => {
+//       if (err) {
+//         return reject(err);
+//       }
+//       let server;
+//       server = app.listen(port, () => {
+//         console.log(`Your app is listening on port ${port}`);
+//         resolve();
+//       })
+//       .on('error', err => {
+//         mongoose.disconnect();
+//         reject(err);
+//       });
+//     });
+//   });
+// }
 
 if (require.main === module) {
   runServer(DATABASE_URL).catch(err => console.error(err));
